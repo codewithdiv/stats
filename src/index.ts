@@ -1,4 +1,4 @@
-import { CsvFileReader } from "./CsvFileReader";
+import { CsvFileReader } from "./class/CsvFileReader";
 import { MatchResult } from "./utils/MatchResultEnum";
 
 const reader = new CsvFileReader("football.csv");
