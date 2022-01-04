@@ -2,16 +2,19 @@ import { CsvFileReader } from "./class/CsvFileReader";
 import { MatchResult } from "./utils/MatchResultEnum";
 import { MatchReader } from "./class/MatchReader";
 
-const reader = new MatchReader("football.csv");
-reader.read();
-let manUnitedWins = 0;
+// const reader = new MatchReader("football.csv");
+// reader.read();
+const csvFileReader = new CsvFileReader("football.csv");
+const matchReader = new MatchReader(csvFileReader);
+matchReader.load();
 
-for (let match of reader.data) {
+let manCity = 0;
+for (let match of matchReader.matches) {
   if (match[1] === "Man City" && match[5] === MatchResult.homeWin) {
-    manUnitedWins++;
+    manCity++;
   } else if (match[2] === "Man City" && match[5] === MatchResult.awayWin) {
-    manUnitedWins++;
+    manCity++;
   }
 }
 
-console.log(`Man City won ${manUnitedWins} games`);
+console.log(`Man City won ${manCity} games`);
