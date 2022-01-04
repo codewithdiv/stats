@@ -22,10 +22,10 @@
 /** ------------------ End of  first refactor ---------------------- */
 
 /** ---------------- Second refactor ---------------------- */
+import { MatchData } from "../matchData";
 import { dateConverter } from "../utils/dateConverter";
 import { MatchResult } from "../utils/MatchResultEnum";
 
-type MatchData = [Date, String, String, Number, Number, MatchResult, String];
 interface DataReader {
   read(): void;
   data: string[][];
