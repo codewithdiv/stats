@@ -1,7 +1,4 @@
 import fs from "fs";
-import { MatchResult } from "../utils/MatchResultEnum";
-
-type MatchData = [Date, String, String, Number, Number, MatchResult, String];
 export abstract class CsvFileReader<T> {
   data: T[] = [];
 

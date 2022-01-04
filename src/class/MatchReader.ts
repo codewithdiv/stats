@@ -2,7 +2,8 @@ import { CsvFileReader } from "./CsvFileReader";
 import { dateConverter } from "../utils/dateConverter";
 import { MatchResult } from "../utils/MatchResultEnum";
 
-export class MatchReader extends CsvFileReader {
+type MatchData = [Date, String, String, Number, Number, MatchResult, String];
+export class MatchReader extends CsvFileReader<MatchData> {
   mapRow(row: string[]): MatchData {
     /** does the convertion of each value in the array of a string*/
     return [
